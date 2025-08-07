@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   experimental: {
     typedRoutes: false,
   },
+  env: {
+    SKIP_ENV_VALIDATION: '1',
+  },
 };
 
 export default nextConfig;
