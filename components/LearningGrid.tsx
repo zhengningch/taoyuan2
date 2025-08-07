@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Plus, BookOpen, CheckCircle, Trash2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface LearningScenario {
   id: string;
@@ -129,10 +130,11 @@ export default function LearningGrid({ userId, onCreateScenario, onStartLearning
       case 'completed':
         return scenario.is_completed && scenario.image_url ? (
           <div className="w-full h-[90%] overflow-hidden rounded-lg">
-            <img 
+            <Image 
               src={scenario.image_url} 
               alt="学习情境图片" 
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         ) : (

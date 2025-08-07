@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { X, Trash2, User, BookOpen, Plus, Edit, Check } from 'lucide-react';
+import Image from 'next/image';
 
 interface ReviewCard {
   id: string;
@@ -511,10 +512,11 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
             {/* 图片背景 */}
             {card.image_url ? (
               <div className="w-full h-full relative">
-                <img 
+                <Image 
                   src={card.image_url} 
                   alt={`${card.word}的学习图片`} 
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 {/* 字词显示在底部 */}
                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2">

@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Upload, Camera, X, Crop } from 'lucide-react';
+import Image from 'next/image';
 
 interface LearningScenarioCreatorProps {
   userId: string;
@@ -326,10 +327,13 @@ export default function LearningScenarioCreator({ userId, onScenarioCreated, onC
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {selectedImages.map((image, index) => (
                       <div key={index} className="relative">
-                        <img
+                        <Image
                           src={URL.createObjectURL(image)}
                           alt={`上传图片 ${index + 1}`}
+                          width={400}
+                          height={192}
                           className="w-full h-48 object-cover rounded border"
+                          unoptimized
                         />
                         <button
                           onClick={() => removeImage(index)}

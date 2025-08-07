@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { getUserPet } from '@/lib/pet';
 import { ChevronLeft, ChevronRight, CheckCircle, Play, Pause } from 'lucide-react';
+import Image from 'next/image';
 
 interface Question {
   question: string;
@@ -585,10 +586,12 @@ export default function LearningInterface({ scenarioId, userId, onBack }: Learni
           
           {petType && (
             <div className="mb-6">
-              <img
+              <Image
                 src={`/animals/${petType}/bowu/0.mp4`}
                 alt="学习完成纪念"
-                className="w-64 h-64 mx-auto rounded-lg shadow-md object-cover"
+                width={256}
+                height={256}
+                className="mx-auto rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   // 如果0.gif不存在，回退到原来的image_url
                   const target = e.target as HTMLImageElement;

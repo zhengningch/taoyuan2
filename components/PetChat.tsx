@@ -111,7 +111,7 @@ const PetChat: React.FC<PetChatProps> = ({ petType, personality, userNickname, p
       setIsLoading(true);
 
       // 创建助手消息占位符
-      let assistantMessage: Message = {
+      const assistantMessage: Message = {
         role: 'assistant',
         content: '',
         timestamp: new Date()
@@ -221,7 +221,7 @@ const PetChat: React.FC<PetChatProps> = ({ petType, personality, userNickname, p
     setIsLoading(true);
 
     // 创建助手消息占位符
-    let assistantMessage: Message = {
+    const assistantMessage: Message = {
       role: 'assistant',
       content: '',
       timestamp: new Date()
