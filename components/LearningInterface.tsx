@@ -586,19 +586,15 @@ export default function LearningInterface({ scenarioId, userId, onBack }: Learni
           
           {petType && (
             <div className="mb-6">
-              <Image
+              <video
                 src={`/animals/${petType}/bowu/0.mp4`}
-                alt="学习完成纪念"
                 width={256}
                 height={256}
                 className="mx-auto rounded-lg shadow-md object-cover"
-                onError={(e) => {
-                  // 如果0.gif不存在，回退到原来的image_url
-                  const target = e.target as HTMLImageElement;
-                  if (content.image_url) {
-                    target.src = content.image_url;
-                  }
-                }}
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
               />
             </div>
           )}
@@ -732,7 +728,7 @@ export default function LearningInterface({ scenarioId, userId, onBack }: Learni
                    <div className="flex flex-wrap items-center text-2xl leading-relaxed">
                      {(currentSentenceData.punctuationExercise || '').split('').map((char, index) => (
                        <span key={index} className="inline-flex items-center">
-                         <span className="mx-1">{char}</span>
+                         <span className="mx-1 text-black">{char}</span>
                          {index < (currentSentenceData.punctuationExercise || '').length - 1 && (
                            <button
                              onClick={() => !punctuationSubmitted && togglePunctuationMark(index + 1)}

@@ -404,10 +404,10 @@ export default function LearningScenarioCreator({ userId, onScenarioCreated, onC
               />
               
               <div className="flex justify-between items-center text-sm">
-                <span className={`${wordCount > 500 ? 'text-red-600' : 'text-gray-600'}`}>
-                  字数：{wordCount}/500
+                <span className={`${wordCount > 1000 ? 'text-red-600' : 'text-gray-600'}`}>
+                  字数：{wordCount}/1000
                 </span>
-                {wordCount > 500 && (
+                {wordCount > 1000 && (
                   <span className="text-red-600">超出字数限制，请删减内容</span>
                 )}
               </div>

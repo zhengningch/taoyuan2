@@ -16,7 +16,7 @@ export default function Dictionary({ userId }: DictionaryProps) {
   const [entries, setEntries] = useState<DictionaryEntry[]>([]);
   const [filteredEntries, setFilteredEntries] = useState<DictionaryEntry[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchType, setSearchType] = useState<'all' | 'word' | 'explanation'>('all');
+  const [searchType, setSearchType] = useState<'word' | 'explanation'>('word');
   const [loading, setLoading] = useState(true);
   const [addingToReview, setAddingToReview] = useState<string | null>(null);
 
@@ -39,7 +39,6 @@ export default function Dictionary({ userId }: DictionaryProps) {
             return entry.字.includes(searchTerm);
           case 'explanation':
             return entry.解释.includes(searchTerm);
-          case 'all':
           default:
             return entry.字.includes(searchTerm) || entry.解释.includes(searchTerm);
         }
@@ -109,14 +108,7 @@ export default function Dictionary({ userId }: DictionaryProps) {
       {/* 搜索框 */}
       <div className="mb-6">
         <div className="flex gap-2 mb-4">
-          <button
-            onClick={() => setSearchType('all')}
-            className={`px-3 py-1 rounded text-sm ${
-              searchType === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
-            }`}
-          >
-            全部
-          </button>
+
           <button
             onClick={() => setSearchType('word')}
             className={`px-3 py-1 rounded text-sm ${

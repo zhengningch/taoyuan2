@@ -161,13 +161,15 @@ export default function Museum({ userId }: MuseumProps) {
             <div className="text-center">
               <h3 className="text-xl font-bold text-gray-800 mb-4">皮肤 {showGif}</h3>
               <div className="mb-4">
-                <Image
+                <video
                   src={`/animals/${petType}/bowu/${showGif}.mp4`}
-                  alt={`皮肤 ${showGif} 动画`}
                   width={300}
                   height={300}
                   className="mx-auto rounded-lg"
-                  unoptimized
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
               <div className="flex gap-2 justify-center">

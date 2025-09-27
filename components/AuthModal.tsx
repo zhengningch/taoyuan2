@@ -62,7 +62,7 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void; onSucce
           />
 
           <button type="submit" className="w-full bg-red-800 text-white p-2 rounded">
-            {isRegister ? '注册' : '登录'}
+            <span className="text-white">{isRegister ? '注册' : '登录'}</span>
           </button>
         </form>
         <button onClick={() => setIsRegister(!isRegister)} className="mt-4 text-blue-500">

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "桃源学境",
-  description: "一炷香，桃源梦",
+  description: "文以入境 豁然开朗",
 };
 
 export default function RootLayout({

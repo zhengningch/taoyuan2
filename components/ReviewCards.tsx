@@ -573,7 +573,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                     </label>
                     <div className="space-y-2">
                       <div className="flex flex-wrap gap-2">
-                        {['小明', '小红', '阿强', '雅琪', '志华', '美玲', '建国', '秀英'].map((name) => (
+                        {['浩然', '子涵', '思源', '博文', '天宇', '俊杰'].map((name) => (
                           <button
                             key={name}
                             onClick={() => setNewPersona({...newPersona, nickname: name})}
@@ -602,7 +602,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                     </label>
                     <div className="space-y-2">
                       <div className="flex flex-wrap gap-2">
-                        {['学者', '商人', '武士', '农夫', '医者', '诗人', '官员', '工匠'].map((identity) => (
+                        {['学者', '商人', '武士', '农夫', '医者', '诗人'].map((identity) => (
                           <button
                             key={identity}
                             onClick={() => setNewPersona({...newPersona, identity: identity})}
@@ -629,10 +629,10 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                 
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    标签 (最多选择2个)
+                    故事标签 (最多选择2个)
                   </label>
                   <div className="flex flex-wrap gap-2 mb-2">
-                    {['勇敢', '智慧', '善良', '坚强', '聪明', '温柔', '正义', '机智'].map((tag) => (
+                    {['勇敢', '智慧', '善良', '懦弱', '幽默', '邪恶', '像庄子一样', '故事如短视频一样'].map((tag) => (
                       <button
                         key={tag}
                         onClick={() => addTag(tag)}
@@ -794,7 +794,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                       </label>
                       <div className="space-y-2">
                         <div className="flex flex-wrap gap-2">
-                          {['小明', '小红', '阿强', '雅琪', '志华', '美玲', '建国', '秀英'].map((name) => (
+                          {['浩然', '子涵', '思源', '博文', '天宇', '俊杰'].map((name) => (
                             <button
                               key={name}
                               onClick={() => setNewPersona({...newPersona, nickname: name})}
@@ -823,7 +823,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                       </label>
                       <div className="space-y-2">
                         <div className="flex flex-wrap gap-2">
-                          {['学者', '商人', '武士', '农夫', '医者', '诗人', '官员', '工匠'].map((identity) => (
+                          {[ '商人', '武士', '农夫', '医者', '诗人', '官员'].map((identity) => (
                             <button
                               key={identity}
                               onClick={() => setNewPersona({...newPersona, identity: identity})}
@@ -853,7 +853,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                       标签 (最多选择2个)
                     </label>
                     <div className="flex flex-wrap gap-2 mb-2">
-                      {['勇敢', '智慧', '善良', '坚强', '聪明', '温柔', '正义', '机智'].map((tag) => (
+                      {['勇敢', '智慧', '善良', '懦弱', '幽默', '邪恶', '像庄子一样', '故事如短视频一样'].map((tag) => (
                         <button
                           key={tag}
                           onClick={() => addTag(tag)}
@@ -1030,7 +1030,7 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                     </div>
                     
                     <div className="p-6 border rounded-lg bg-gray-50">
-                      <div className="text-lg text-gray-800 mb-4">
+                      <div className="text-lg text-black mb-4">
                         {examContent.questions[currentQuestionIndex]?.question}
                       </div>
                       
@@ -1058,12 +1058,12 @@ export default function ReviewCards({ userId }: ReviewCardsProps) {
                             } else if (!isSelected && isCorrect) {
                               buttonClass += 'border-green-500 bg-green-50 text-green-700';
                             } else {
-                              buttonClass += 'border-gray-300 bg-gray-50 text-gray-600';
+                              buttonClass += 'border-gray-300 bg-gray-50 text-black';
                             }
                           } else if (isSelected) {
-                            buttonClass += 'border-blue-500 bg-blue-50';
+                            buttonClass += 'border-blue-500 bg-blue-50 text-black';
                           } else {
-                            buttonClass += 'border-gray-300 hover:border-gray-400 hover:bg-gray-50';
+                            buttonClass += 'border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-black';
                           }
                           
                           const isDisabled = hasAnswered && showResult && questionResults[currentQuestionIndex];
